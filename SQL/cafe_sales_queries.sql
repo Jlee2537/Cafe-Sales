@@ -53,32 +53,41 @@ SELECT price_per_unit, count(*) count
 FROM sales_staging
 GROUP BY 1;
 
+-- 'Unknown', 'Error' and blanks found throughout multiple columns.
+-- Standardizing to NULL
 
 UPDATE sales_staging
-SET total_spent = CASE
-		WHEN total_spent IN ('Unknown', 'Error' , '') THEN NULL
-		ELSE total_spent
-		END,
-	item = CASE
-		WHEN item IN ('Unknown', 'Error' , '') THEN NULL
-		ELSE item
-		END,
-	payment_method = CASE
-		WHEN payment_method IN ('Unknown', 'Error' , '') THEN NULL
-		ELSE payment_method
-		END,
-	location = CASE
-		WHEN location IN ('Unknown', 'Error' , '') THEN NULL
-		ELSE location
-		END,
-	transaction_date = CASE
-		WHEN transaction_date IN ('Unknown', 'Error' , '') THEN NULL
-		ELSE transaction_date
-		END;
+SET 
+    total_spent = CASE
+        WHEN total_spent IN ('Unknown', 'Error', '') THEN NULL
+        ELSE total_spent
+    END,
+    item = CASE
+        WHEN item IN ('Unknown', 'Error', '') THEN NULL
+        ELSE item
+    END,
+    payment_method = CASE
+        WHEN payment_method IN ('Unknown', 'Error', '') THEN NULL
+        ELSE payment_method
+    END,
+    location = CASE
+        WHEN location IN ('Unknown', 'Error', '') THEN NULL
+        ELSE location
+    END,
+    transaction_date = CASE
+        WHEN transaction_date IN ('Unknown', 'Error', '') THEN NULL
+        ELSE transaction_date
+    END,
+    quantity = CASE
+        WHEN quantity IN ('Unknown', 'Error', '') THEN NULL
+        ELSE quantity
+    END,
+    price_per_unit = CASE
+        WHEN price_per_unit IN ('Unknown', 'Error', '') THEN NULL
+        ELSE price_per_unit
+    END;
 
 -- Changing Data Types
-
--- Setting Quantity datatype to INT
 ALTER TABLE sales_staging
 MODIFY Quantity INT;
 
@@ -192,7 +201,7 @@ ON t1.price_per_unit = t2.price_per_unit
 SET t1.item = t2.item
 WHERE t1.item IS NULL;
 
--- Setting NULLS to Unknown
+-- Setting NULLS to 'Unknown' For payment_method and location
 UPDATE sales_staging
 SET payment_method = 'Unknown'
 WHERE payment_method IS NULL;
