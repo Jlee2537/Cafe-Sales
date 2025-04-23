@@ -1,6 +1,6 @@
 # Cafe Sales Data Cleaning
 ## Project Overview
-The Coffee House is a newly opened café specializing in coffee, desserts, and grab-and-go meals. As the business begins to grow, the company has started collecting sales transaction data to better understand customer behavior and make informed decisions. However, the dataset contains several data quality issues, including inconsistent values, incorrect data types, missing fields, and formatting errors.
+The Coffee House is a newly opened cafe specializing in coffee, desserts, and grab-and-go meals. As the business begins to grow, the company has started collecting sales transaction data to better understand customer behavior and make informed decisions. However, the dataset contains several data quality issues, including inconsistent values, incorrect data types, missing fields, and formatting errors.
 
 This project focuses on cleaning and preparing a synthetic dataset of sales transactions from The Coffee House. The objective is to apply fundamental data cleaning techniques using SQL to transform the raw dataset into a structured, accurate, and analysis-ready format suitable for future reporting and business analysis.
 ## Objectives
