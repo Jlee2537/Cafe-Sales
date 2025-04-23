@@ -19,4 +19,5 @@ During the initial import, all columns were temporarily defined as TEXT to accom
 ![image](https://github.com/user-attachments/assets/66fb76e1-b685-45e1-a622-56778dc6775d)
 ### Data Cleaning Queries
 The raw and cleaned cafe sales dataset can be found [here](https://github.com/Jlee2537/Cafe-Sales/tree/main/Dataset)
+
 The SQL queries utilized to clean, organize, and prepare data can be found [here](https://github.com/Jlee2537/Cafe-Sales/blob/main/SQL/cafe_sales_queries.sql)
